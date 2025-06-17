@@ -15,6 +15,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProperties from "./pages/admin/AdminProperties";
 import AdminTeam from "./pages/admin/AdminTeam";
+import AdminTest from "./AdminTest";
 
 const queryClient = new QueryClient();
 
