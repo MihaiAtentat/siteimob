@@ -14,7 +14,8 @@ export const COMPANY_CONFIG = {
   logoText: "TE", // Se afișează în navbar
 
   // Logo imagine (înlocuiește logoText dacă este definit)
-  logoImage: "/logo.png", // Pune fișierul în public/logo.png
+  // Comentează linia de mai jos pentru a folosi logoText
+  // logoImage: "/logo.png", // Pune fișierul în public/logo.png
 
   // Dimensiuni logo
   logoSize: {
