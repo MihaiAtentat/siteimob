@@ -58,7 +58,9 @@ export const AdminAuthProvider = ({ children }: AdminAuthProviderProps) => {
   };
 
   return (
-    <AdminAuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AdminAuthContext.Provider
+      value={{ isAuthenticated, isLoading, login, logout }}
+    >
       {children}
     </AdminAuthContext.Provider>
   );
