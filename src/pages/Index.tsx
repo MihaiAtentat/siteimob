@@ -135,8 +135,11 @@ const Index = () => {
               </h1>
 
               <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
-                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
+                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau
+                vindețo la cel mai bun preț.
               </p>
+
+              <p className="text-lg text-white mb-10 max-w-2xl opacity-90">
                 Sună-ne, iar noi te ajutăm să iei cea mai bună decizie pentru
                 îndeplinirea obiectivelor TALE.
               </p>
