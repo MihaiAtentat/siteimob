@@ -130,8 +130,7 @@ const Index = () => {
               </h1>
 
               <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
-                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau
-                vindețo la cel mai bun preț.
+                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
               </p>
 
               {/* Property Search Component */}
@@ -144,43 +143,14 @@ const Index = () => {
       {/* WhatsApp Button */}
       <WhatsAppButton />
 
-      {/* Featured Properties Section */}
-      <section className="pt-8 pb-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
-            {getFeaturedProperties().map((property) => (
-              <div
-                key={`featured-${property.id}`}
-                className="w-full max-w-sm mx-auto"
-              >
-                <PropertyCard
-                  {...property}
-                  index={0}
-                  onClick={() => navigate(`/proprietate/${property.id}`)}
-                />
-              </div>
-            ))}
-          </div>
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
 
-          {/* Action Buttons - Large */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-6">
-              Oferte imobiliare {COMPANY_CONFIG.name}
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Descoperă cele mai bune proprietăți din portofoliul nostru
-            </p>
-            <div
-              className="w-24 h-1 mx-auto mt-6"
-              style={{ backgroundColor: DESIGN_CONFIG.colors.primary }}
-            ></div>
-          </div>
-        </div>
-      </section>
+      {/* Banner Section - Only on Homepage */}
+      <Banner />
 
       {/* Footer */}
       <Footer />
-    </div>
   );
 };
 
