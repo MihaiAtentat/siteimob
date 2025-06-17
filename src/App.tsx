@@ -33,6 +33,9 @@ const App = () => (
             <Route path="/echipa" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
 
+            {/* Admin Test Route - Remove this after testing */}
+            <Route path="/admin-test" element={<AdminTest />} />
+
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route
