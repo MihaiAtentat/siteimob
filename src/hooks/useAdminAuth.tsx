@@ -5,8 +5,8 @@ import {
   useContext,
   ReactNode,
 } from "react";
-import { ADMIN_CONFIG } from "../config/app";
-import { jwtManager, isValidToken, isTokenExpired } from "../utils/jwt";
+import { ADMIN_CONFIG } from "@/config/app";
+import { jwtManager, isValidToken, isTokenExpired } from "@/utils/jwt";
 
 interface AdminAuthContextType {
   isAuthenticated: boolean;

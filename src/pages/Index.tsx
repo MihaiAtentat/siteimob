@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DESIGN_CONFIG, COMPANY_CONFIG } from "../config/app";
+import { DESIGN_CONFIG, COMPANY_CONFIG } from "@/config/app";
 import Navigation from "../components/Navigation";
 import PropertySearch from "../components/PropertySearch";
 import PropertyCard from "../components/PropertyCard";

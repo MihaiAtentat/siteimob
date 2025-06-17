@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import { COMPANY_CONFIG, FEATURES_CONFIG } from "../config/app";
+import { COMPANY_CONFIG, FEATURES_CONFIG } from "@/config/app";
 
 const WhatsAppButton = () => {
   // Don't render if WhatsApp is disabled
