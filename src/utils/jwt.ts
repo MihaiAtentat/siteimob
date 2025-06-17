@@ -1,4 +1,4 @@
-import { ADMIN_CONFIG } from "@/config/app";
+import { ADMIN_CONFIG } from "../config/app";
 
 // Types for JWT payload
 export interface JWTPayload {
