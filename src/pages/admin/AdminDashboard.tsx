@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -5,9 +6,20 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Building, Users, TrendingUp, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Building,
+  Users,
+  TrendingUp,
+  Eye,
+  Plus,
+  BarChart3,
+  Settings,
+} from "lucide-react";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
   // Mock statistics - in a real app, this would come from an API
   const stats = [
     {
@@ -96,30 +108,46 @@ const AdminDashboard = () => {
             <CardDescription>Operațiuni frecvent utilizate</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            <button className="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-              <div className="font-medium text-gray-900">
-                Adaugă Proprietate Nouă
+            <Button
+              onClick={() => navigate("/admin/properties")}
+              className="w-full justify-start bg-red-600 hover:bg-red-700 text-white h-auto p-4"
+            >
+              <Plus className="w-5 h-5 mr-3" />
+              <div className="text-left">
+                <div className="font-medium">Adaugă Proprietate Nouă</div>
+                <div className="text-sm opacity-90">
+                  Creează o nouă listare de proprietate
+                </div>
               </div>
-              <div className="text-sm text-gray-600">
-                Creează o nouă listare de proprietate
+            </Button>
+
+            <Button
+              onClick={() => navigate("/admin/team")}
+              variant="outline"
+              className="w-full justify-start h-auto p-4"
+            >
+              <Users className="w-5 h-5 mr-3" />
+              <div className="text-left">
+                <div className="font-medium">Adaugă Membru Echipă</div>
+                <div className="text-sm text-gray-600">
+                  Înregistrează un nou agent imobiliar
+                </div>
               </div>
-            </button>
-            <button className="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-              <div className="font-medium text-gray-900">
-                Adaugă Membru Echipă
+            </Button>
+
+            <Button
+              onClick={() => navigate("/admin/analytics")}
+              variant="outline"
+              className="w-full justify-start h-auto p-4"
+            >
+              <BarChart3 className="w-5 h-5 mr-3" />
+              <div className="text-left">
+                <div className="font-medium">Vizualizează Analytics</div>
+                <div className="text-sm text-gray-600">
+                  Accesează statistici și loguri detaliate
+                </div>
               </div>
-              <div className="text-sm text-gray-600">
-                Înregistrează un nou agent imobiliar
-              </div>
-            </button>
-            <button className="w-full text-left p-3 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors">
-              <div className="font-medium text-gray-900">
-                Vizualizează Rapoarte
-              </div>
-              <div className="text-sm text-gray-600">
-                Accesează statistici detaliate
-              </div>
-            </button>
+            </Button>
           </CardContent>
         </Card>
 
@@ -152,8 +180,8 @@ const AdminDashboard = () => {
         </CardHeader>
         <CardContent>
           <div className="space-y-3">
-            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
-              <div>
+            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex-1">
                 <div className="font-medium text-gray-900">
                   Garsonieră dublă ultracentral - Bulevardul Carol Nr. 62
                 </div>
@@ -161,10 +189,20 @@ const AdminDashboard = () => {
                   €61,000 • 35 mp • Apartament
                 </div>
               </div>
-              <div className="text-sm text-gray-500">Azi</div>
+              <div className="flex items-center gap-2">
+                <div className="text-sm text-gray-500">Azi</div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate("/admin/properties")}
+                  className="text-red-600 hover:text-red-700"
+                >
+                  Vezi
+                </Button>
+              </div>
             </div>
-            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
-              <div>
+            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex-1">
                 <div className="font-medium text-gray-900">
                   Apartament 3 camere Pipera Școala Americană
                 </div>
@@ -172,10 +210,20 @@ const AdminDashboard = () => {
                   €150,000 • 85 mp • Apartament
                 </div>
               </div>
-              <div className="text-sm text-gray-500">Ieri</div>
+              <div className="flex items-center gap-2">
+                <div className="text-sm text-gray-500">Ieri</div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate("/admin/properties")}
+                  className="text-red-600 hover:text-red-700"
+                >
+                  Vezi
+                </Button>
+              </div>
             </div>
-            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
-              <div>
+            <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+              <div className="flex-1">
                 <div className="font-medium text-gray-900">
                   Teren pentru construcție bloc | sau duplexuri | 710 mp
                 </div>
@@ -183,7 +231,27 @@ const AdminDashboard = () => {
                   €69,900 • 710 mp • Teren
                 </div>
               </div>
-              <div className="text-sm text-gray-500">Acum 2 zile</div>
+              <div className="flex items-center gap-2">
+                <div className="text-sm text-gray-500">Acum 2 zile</div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => navigate("/admin/properties")}
+                  className="text-red-600 hover:text-red-700"
+                >
+                  Vezi
+                </Button>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t">
+              <Button
+                onClick={() => navigate("/admin/properties")}
+                variant="outline"
+                className="w-full"
+              >
+                Vezi Toate Proprietățile
+              </Button>
             </div>
           </div>
         </CardContent>
