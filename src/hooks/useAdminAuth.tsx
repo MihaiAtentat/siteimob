@@ -35,26 +35,46 @@ export const AdminAuthProvider = ({ children }: AdminAuthProviderProps) => {
 
   // Check if admin is already logged in on mount
   useEffect(() => {
-    const adminAuth = localStorage.getItem("adminAuth");
-    if (adminAuth === "true") {
-      setIsAuthenticated(true);
+    try {
+      const adminAuth = localStorage.getItem("adminAuth");
+      console.log("Checking admin auth:", adminAuth);
+      if (adminAuth === "true") {
+        setIsAuthenticated(true);
+        console.log("Admin authenticated from localStorage");
+      }
+    } catch (error) {
+      console.error("Error reading localStorage:", error);
     }
     setIsLoading(false);
   }, []);
 
   const login = (password: string): boolean => {
+    console.log("Attempting login with password:", password);
     // Simple password check - in production, this would be handled server-side
     if (password === "admin123") {
+      console.log("Login successful");
       setIsAuthenticated(true);
-      localStorage.setItem("adminAuth", "true");
+      try {
+        localStorage.setItem("adminAuth", "true");
+        console.log("localStorage set successfully");
+      } catch (error) {
+        console.error("Error setting localStorage:", error);
+      }
       return true;
     }
+    console.log("Login failed - incorrect password");
     return false;
   };
 
   const logout = () => {
+    console.log("Logging out admin");
     setIsAuthenticated(false);
-    localStorage.removeItem("adminAuth");
+    try {
+      localStorage.removeItem("adminAuth");
+      console.log("localStorage cleared successfully");
+    } catch (error) {
+      console.error("Error clearing localStorage:", error);
+    }
   };
 
   return (
