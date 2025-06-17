@@ -1,0 +1,117 @@
+import { Search, SlidersHorizontal } from "lucide-react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
+import { Separator } from "./ui/separator";
+
+const PropertyFilters = () => {
+  return (
+    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-red-100 lg:sticky lg:top-24 mb-6 lg:mb-0">
+      {/* Header */}
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-bold text-slate-800">
+          Filtrare proprietăți
+        </h2>
+        <p className="text-sm text-slate-600">172 rezultate</p>
+      </div>
+
+      <Separator className="bg-red-200 mb-4 sm:mb-6" />
+
+      {/* Property Type */}
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+          Tip proprietate
+        </label>
+        <Input
+          placeholder="Caută după zonă..."
+          className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+        />
+      </div>
+
+      {/* Zone */}
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+          Zonă
+        </label>
+        <Select>
+          <SelectTrigger className="bg-slate-50 border-red-200 text-slate-800 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12">
+            <SelectValue placeholder="Selectează tipul" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="apartament">Apartament</SelectItem>
+            <SelectItem value="casa">Casă</SelectItem>
+            <SelectItem value="vila">Vilă</SelectItem>
+            <SelectItem value="teren">Teren</SelectItem>
+            <SelectItem value="comercial">Spațiu comercial</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* Price Range */}
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+          Preț (€)
+        </label>
+        <div className="flex gap-2">
+          <Input
+            placeholder="Min"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+          />
+          <Input
+            placeholder="Max"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+          />
+        </div>
+      </div>
+
+      {/* Rooms */}
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+          Camere
+        </label>
+        <div className="grid grid-cols-4 gap-2">
+          {[1, 2, 3, "4+"].map((num) => (
+            <Button
+              key={num}
+              variant="outline"
+              className="border-red-200 text-slate-700 hover:bg-red-50 hover:border-red-300 h-8 sm:h-10 text-sm"
+            >
+              {num}
+            </Button>
+          ))}
+        </div>
+      </div>
+
+      {/* Useful Area */}
+      <div className="mb-4 sm:mb-6">
+        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+          Suprafața utilă
+        </label>
+        <div className="flex gap-2">
+          <Input
+            placeholder="Min"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+          />
+          <Input
+            placeholder="Max"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+          />
+        </div>
+      </div>
+
+      {/* Apply Filters Button */}
+      <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 sm:py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
+        <SlidersHorizontal className="h-4 w-4 mr-2" />
+        Aplică filtrele
+      </Button>
+    </div>
+  );
+};
+
+export default PropertyFilters;
