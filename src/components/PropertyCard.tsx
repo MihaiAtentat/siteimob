@@ -35,7 +35,7 @@ const PropertyCard = ({
   onClick,
 }: PropertyCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group overflow-hidden w-full h-[600px] flex flex-col">
+    <div className="bg-white rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden w-full h-[600px] flex flex-col property-card">
       {/* Video Player - Top Section */}
       <div className="relative rounded-t-lg overflow-hidden">
         <VideoPlayer
@@ -62,7 +62,7 @@ const PropertyCard = ({
       </div>
 
       {/* Property Information - Simplified Section */}
-      <div className="px-4 py-4 text-slate-800 flex flex-col h-[200px] justify-between text-center">
+      <div className="px-4 pt-[17px] pb-4 text-slate-800 flex flex-col h-[200px] justify-between text-center">
         {/* Price - Large at top */}
         <div className="text-2xl font-bold text-slate-900 mb-4">
           {currency}

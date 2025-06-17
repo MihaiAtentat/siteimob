@@ -5,13 +5,13 @@
 // 🏢 INFORMAȚII COMPANIE
 export const COMPANY_CONFIG = {
   // Numele companiei - apare în title, footer, etc.
-  name: "TRÂMBIȚAȘU ESTATE",
+  name: "Casa Vis",
 
   // Slogan/descriere scurtă
   tagline: "Experți în tranzacții imobiliare",
 
   // Logo text (dacă nu folosești imagine)
-  logoText: "TE", // Se afișează în navbar
+  logoText: "CV", // Se afișează în navbar
 
   // Logo imagine (înlocuiește logoText dacă este definit)
   // Comentează linia de mai jos pentru a folosi logoText
@@ -32,19 +32,31 @@ export const COMPANY_CONFIG = {
 
   // Adresa
   address: {
-    street: "Str. Exemplu Nr. 123",
-    city: "București",
-    county: "Sector 1",
+    street: "Str. Bulevardul Republicii 17",
+    city: "Onești",
+    county: "Bacău",
     country: "România",
-    postalCode: "010123",
+    postalCode: "601018",
+    coordinates: "46.248576915439685, 26.766675025241923",
   },
 
-  // Social media
+  // Social media (dezactivate pentru Casa Vis)
   social: {
-    facebook: "https://facebook.com/trambitas-estate",
-    instagram: "https://instagram.com/trambitas-estate",
-    linkedin: "https://linkedin.com/company/trambitas-estate",
-    youtube: "https://youtube.com/@trambitas-estate",
+    facebook: "",
+    instagram: "",
+    linkedin: "",
+    youtube: "",
+  },
+
+  // Banner homepage
+  banner: {
+    enabled: true,
+    title: "Găsește-ți casa visurilor tale!",
+    subtitle: "Consultanță gratuită pentru toate proprietățile noastre",
+    buttonText: "Contactează-ne acum",
+    buttonLink: "/contact",
+    backgroundImage: "/images/banner-bg.jpg",
+    backgroundColor: "#dc2626",
   },
 };
 
@@ -58,10 +70,10 @@ export const DESIGN_CONFIG = {
     accent: "#f59e0b", // Culoare accent (galben)
   },
 
-  // Font-uri (trebuie să fie disponibile în CSS)
+  // Font-uri (trebuie să fie disponibile în CSS) - Fonturi populare în real estate
   fonts: {
-    primary: "Inter, system-ui, sans-serif",
-    heading: "Inter, system-ui, sans-serif",
+    primary: "Poppins, system-ui, sans-serif", // Modern, clean pentru real estate
+    heading: "Playfair Display, serif", // Elegant pentru titluri
     mono: "JetBrains Mono, monospace",
   },
 

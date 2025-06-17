@@ -9,6 +9,7 @@ import {
   LogOut,
   Home,
   BarChart3,
+  Settings,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -36,6 +37,11 @@ const AdminSidebar = () => {
       title: "Analytics & Loguri",
       path: "/admin/analytics",
       icon: BarChart3,
+    },
+    {
+      title: "Setări Site",
+      path: "/admin/settings",
+      icon: Settings,
     },
   ];
 

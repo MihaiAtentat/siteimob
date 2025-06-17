@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import PropertySearch from "../components/PropertySearch";
 import PropertyCard from "../components/PropertyCard";
 import WhatsAppButton from "../components/WhatsAppButton";
+import Banner from "../components/Banner";
 import Footer from "../components/Footer";
 
 // Mock data - same as Properties page
@@ -121,27 +122,16 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 flex items-center min-h-screen pt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32 mb-28">
             <div className="max-w-4xl">
               {/* Main Heading - Left Aligned */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Bine ați venit la
-                <span
-                  className="block mt-2"
-                  style={{ color: DESIGN_CONFIG.colors.primary }}
-                >
-                  {COMPANY_CONFIG.name}
-                </span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight pl-12">
+                Casa Vis
               </h1>
 
               <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
                 {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau
                 vindețo la cel mai bun preț.
-              </p>
-
-              <p className="text-lg text-white mb-10 max-w-2xl opacity-90">
-                Sună-ne, iar noi te ajutăm să iei cea mai bună decizie pentru
-                îndeplinirea obiectivelor TALE.
               </p>
 
               {/* Property Search Component */}
