@@ -130,7 +130,8 @@ const Index = () => {
               </h1>
 
               <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
-                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
+                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau
+                vindețo la cel mai bun preț.
               </p>
 
               {/* Property Search Component */}
@@ -151,6 +152,7 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
+    </div>
   );
 };
 
