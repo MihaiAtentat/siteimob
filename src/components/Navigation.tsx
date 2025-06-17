@@ -43,7 +43,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div>
+            <a href="/" className="flex items-center">
               {COMPANY_CONFIG.logoImage ? (
                 <img
                   src={COMPANY_CONFIG.logoImage}
@@ -66,7 +66,7 @@ const Navigation = () => {
                   {COMPANY_CONFIG.logoText}
                 </div>
               )}
-            </div>
+            </a>
           </div>
 
           {/* Navigation links - Desktop */}
