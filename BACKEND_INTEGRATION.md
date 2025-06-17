@@ -23,11 +23,13 @@ src/
 
 Creează fișierul `.env.local`:
 
-```bash
+```
 VITE_API_URL=http://localhost:3001/api
 VITE_APP_ENV=development
 VITE_ANALYTICS_ENABLED=true
 ```
+
+**⚠️ Important**: Aplicația folosește `import.meta.env` (specific Vite) în loc de `process.env`. Toate variabilele trebuie să înceapă cu `VITE_` pentru a fi accesibile în frontend.
 
 ### 2. Înlocuiește Mock Data cu API Calls
 
