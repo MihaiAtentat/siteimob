@@ -7,7 +7,7 @@ import {
   Linkedin,
   Youtube,
 } from "lucide-react";
-import { COMPANY_CONFIG, DESIGN_CONFIG } from "@/config/app";
+import { COMPANY_CONFIG, DESIGN_CONFIG } from "../config/app";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
