@@ -124,18 +124,19 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32">
             <div className="max-w-4xl">
               {/* Main Heading - Left Aligned */}
-            <span
-              className="block mt-2"
-              style={{ color: DESIGN_CONFIG.colors.primary }}
-            >
-              {COMPANY_CONFIG.name}
-            </span>
-          </h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Bine ați venit la
+                <span
+                  className="block mt-2"
+                  style={{ color: DESIGN_CONFIG.colors.primary }}
+                >
+                  {COMPANY_CONFIG.name}
+                </span>
+              </h1>
 
-          <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
-            {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
-          </p>
-            </h1>
+              <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
+                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
+              </p>
                 Sună-ne, iar noi te ajutăm să iei cea mai bună decizie pentru
                 îndeplinirea obiectivelor TALE.
               </p>
