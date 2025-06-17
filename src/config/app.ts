@@ -102,7 +102,7 @@ export const ADMIN_CONFIG = {
 
   // URL-uri pentru backend
   api: {
-    baseUrl: process.env.VITE_API_URL || "http://localhost:3001/api",
+    baseUrl: import.meta.env.VITE_API_URL || "http://localhost:3001/api",
     authEndpoint: "/auth/login",
     validateEndpoint: "/auth/validate",
   },
