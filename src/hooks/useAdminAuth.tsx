@@ -8,6 +8,7 @@ import {
 
 interface AdminAuthContextType {
   isAuthenticated: boolean;
+  isLoading: boolean;
   login: (password: string) => boolean;
   logout: () => void;
 }
