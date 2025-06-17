@@ -15,10 +15,21 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Lock } from "lucide-react";
 
 const AdminLogin = () => {
-  const { isAuthenticated, login } = useAdminAuth();
+  const { isAuthenticated, isLoading: authLoading, login } = useAdminAuth();
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="w-8 h-8 border-4 border-red-600 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-600">Se încarcă...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (isAuthenticated) {
     return <Navigate to="/admin" replace />;
