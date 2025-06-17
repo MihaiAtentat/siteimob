@@ -31,6 +31,7 @@ interface AdminAuthProviderProps {
 
 export const AdminAuthProvider = ({ children }: AdminAuthProviderProps) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Check if admin is already logged in on mount
   useEffect(() => {
@@ -38,6 +39,7 @@ export const AdminAuthProvider = ({ children }: AdminAuthProviderProps) => {
     if (adminAuth === "true") {
       setIsAuthenticated(true);
     }
+    setIsLoading(false);
   }, []);
 
   const login = (password: string): boolean => {
