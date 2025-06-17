@@ -2,7 +2,14 @@ import { Link, useLocation } from "react-router-dom";
 import { useAdminAuth } from "@/hooks/useAdminAuth";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { LayoutDashboard, Building, Users, LogOut, Home } from "lucide-react";
+import {
+  LayoutDashboard,
+  Building,
+  Users,
+  LogOut,
+  Home,
+  BarChart3,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const AdminSidebar = () => {
@@ -24,6 +31,11 @@ const AdminSidebar = () => {
       title: "Echipa",
       path: "/admin/team",
       icon: Users,
+    },
+    {
+      title: "Analytics & Loguri",
+      path: "/admin/analytics",
+      icon: BarChart3,
     },
   ];
 

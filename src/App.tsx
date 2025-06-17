@@ -15,7 +15,7 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProperties from "./pages/admin/AdminProperties";
 import AdminTeam from "./pages/admin/AdminTeam";
-import AdminTest from "./AdminTest";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
 
 const queryClient = new QueryClient();
 
@@ -32,9 +32,6 @@ const App = () => (
             <Route path="/proprietate/:id" element={<PropertyDetail />} />
             <Route path="/echipa" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
-
-            {/* Admin Test Route - Remove this after testing */}
-            <Route path="/admin-test" element={<AdminTest />} />
 
             {/* Admin Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -59,6 +56,14 @@ const App = () => (
               element={
                 <AdminLayout>
                   <AdminTeam />
+                </AdminLayout>
+              }
+            />
+            <Route
+              path="/admin/analytics"
+              element={
+                <AdminLayout>
+                  <AdminAnalytics />
                 </AdminLayout>
               }
             />
