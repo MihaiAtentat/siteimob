@@ -1,97 +1,196 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
+import { COMPANY_CONFIG, DESIGN_CONFIG } from "@/config/app";
 
 const Footer = () => {
-  return (
-    <footer className="bg-slate-800 text-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Logo and Company Info - Left */}
-          <div className="space-y-4">
-            {/* Logo Placeholder */}
-            <div className="w-16 h-16 bg-red-600 rounded-lg flex items-center justify-center mb-4">
-              <span className="text-white font-bold text-xl">CV</span>
-            </div>
+  const currentYear = new Date().getFullYear();
 
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-2">
-                Agenția Casa Vis
-              </h3>
-              <div className="space-y-2 text-gray-300">
-                <div className="flex items-center gap-2">
-                  <Phone className="h-4 w-4 text-green-500" />
-                  <span>0742 801 123</span>
+  const getSocialIcon = (platform: string) => {
+    switch (platform) {
+      case "facebook":
+        return Facebook;
+      case "instagram":
+        return Instagram;
+      case "linkedin":
+        return Linkedin;
+      case "youtube":
+        return Youtube;
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <footer className="bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              {COMPANY_CONFIG.logoImage ? (
+                <img
+                  src={COMPANY_CONFIG.logoImage}
+                  alt={`${COMPANY_CONFIG.name} Logo`}
+                  className="rounded-lg object-contain"
+                  style={{
+                    width: COMPANY_CONFIG.logoSize.width,
+                    height: COMPANY_CONFIG.logoSize.height,
+                  }}
+                />
+              ) : (
+                <div
+                  className="flex items-center justify-center text-white text-lg font-medium rounded-lg"
+                  style={{
+                    backgroundColor: DESIGN_CONFIG.colors.primary,
+                    width: COMPANY_CONFIG.logoSize.width,
+                    height: COMPANY_CONFIG.logoSize.height,
+                  }}
+                >
+                  {COMPANY_CONFIG.logoText}
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-red-400" />
-                  <span>casavis@yahoo.com</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4 text-red-400" />
-                  <span>Bulevardul Republicii 17, Onești</span>
+              )}
+              <div>
+                <h3 className="text-lg font-bold">{COMPANY_CONFIG.name}</h3>
+                <p className="text-sm text-gray-400">
+                  {COMPANY_CONFIG.tagline}
+                </p>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              Experți în domeniul imobiliar cu experiență vastă în vânzarea și
+              închirierea proprietăților. Vă oferim consultanță profesională și
+              servicii de calitate.
+            </p>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold text-white">Contact</h4>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <Phone className="h-4 w-4 text-green-500 flex-shrink-0" />
+                <a
+                  href={`tel:${COMPANY_CONFIG.contact.phone}`}
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  {COMPANY_CONFIG.contact.phone}
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                <a
+                  href={`mailto:${COMPANY_CONFIG.contact.email}`}
+                  className="text-gray-300 hover:text-white transition-colors text-sm"
+                >
+                  {COMPANY_CONFIG.contact.email}
+                </a>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" />
+                <div className="text-gray-300 text-sm">
+                  <div>{COMPANY_CONFIG.address.street}</div>
+                  <div>
+                    {COMPANY_CONFIG.address.city},{" "}
+                    {COMPANY_CONFIG.address.county}
+                  </div>
+                  <div>
+                    {COMPANY_CONFIG.address.country}{" "}
+                    {COMPANY_CONFIG.address.postalCode}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Navigation Links - Middle */}
+          {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Navigare</h4>
+            <h4 className="text-lg font-semibold text-white">
+              Navigare Rapidă
+            </h4>
             <div className="space-y-2">
               <a
+                href="/"
+                className="block text-gray-300 hover:text-white transition-colors text-sm"
+              >
+                Acasă
+              </a>
+              <a
                 href="/proprietati"
-                className="block text-gray-300 hover:text-red-400 transition-colors"
+                className="block text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Proprietăți
               </a>
               <a
                 href="/echipa"
-                className="block text-gray-300 hover:text-red-400 transition-colors"
+                className="block text-gray-300 hover:text-white transition-colors text-sm"
               >
-                Echipa
+                Echipa Noastră
               </a>
               <a
                 href="/contact"
-                className="block text-gray-300 hover:text-red-400 transition-colors"
+                className="block text-gray-300 hover:text-white transition-colors text-sm"
               >
                 Contact
               </a>
             </div>
           </div>
 
-          {/* Map - Right */}
+          {/* Social Media */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">
-              Locația noastră
-            </h4>
-            <div className="bg-gray-700 rounded-lg overflow-hidden h-48">
-              <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2747.123456789!2d26.76668325467285!3d46.248578525004824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDE0JzU0LjkiTiAyNsKwNDYnMDAuMSJF!5e0!3m2!1sen!2sro!4v1234567890123`}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-lg"
-              />
+            <h4 className="text-lg font-semibold text-white">Urmărește-ne</h4>
+            <div className="flex space-x-4">
+              {Object.entries(COMPANY_CONFIG.social).map(([platform, url]) => {
+                const IconComponent = getSocialIcon(platform);
+                if (!IconComponent || !url) return null;
+
+                return (
+                  <a
+                    key={platform}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  >
+                    <IconComponent className="h-4 w-4 text-gray-300" />
+                  </a>
+                );
+              })}
             </div>
-            <a
-              href={`https://www.google.com/maps?q=46.248578525004824,26.76668325467285`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-red-400 hover:text-red-300 transition-colors text-sm"
-            >
-              Deschide în Google Maps
-            </a>
+            <div className="text-gray-400 text-sm">
+              <p>
+                Urmărește-ne pe rețelele sociale pentru cele mai noi proprietăți
+                și oferte speciale.
+              </p>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Agenția Casa Vis. Toate drepturile
-            rezervate.
-          </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm">
+              © {currentYear} {COMPANY_CONFIG.name}. Toate drepturile
+              rezervate.
+            </div>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <a href="#" className="hover:text-white transition-colors">
+                Politica de Confidențialitate
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                Termeni și Condiții
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                GDPR
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

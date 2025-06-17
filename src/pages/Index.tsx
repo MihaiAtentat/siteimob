@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DESIGN_CONFIG, COMPANY_CONFIG } from "@/config/app";
 import Navigation from "../components/Navigation";
 import PropertySearch from "../components/PropertySearch";
 import PropertyCard from "../components/PropertyCard";
@@ -123,12 +124,14 @@ const Index = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32">
             <div className="max-w-4xl">
               {/* Main Heading - Left Aligned */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Agenția Casa Vis
-              </h1>
-
-              {/* Subtitle - Left Aligned */}
-              <p className="text-lg md:text-xl text-white/95 max-w-2xl mb-12 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
+              {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau vindețo la cel mai bun preț.
+            </p>
+                style={{ color: DESIGN_CONFIG.colors.primary }}
+              >
+                {COMPANY_CONFIG.name}
+              </span>
+            </h1>
                 Sună-ne, iar noi te ajutăm să iei cea mai bună decizie pentru
                 îndeplinirea obiectivelor TALE.
               </p>
@@ -162,19 +165,17 @@ const Index = () => {
           </div>
 
           {/* Action Buttons - Large */}
-          <div className="flex justify-center gap-6 mt-16 max-w-2xl mx-auto">
-            <button
-              onClick={() => navigate("/echipa")}
-              className="flex-1 bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
-            >
-              Echipa
-            </button>
-            <button
-              onClick={() => navigate("/contact")}
-              className="flex-1 bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
-            >
-              Contact
-            </button>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 mb-6">
+              Oferte imobiliare {COMPANY_CONFIG.name}
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Descoperă cele mai bune proprietăți din portofoliul nostru
+            </p>
+            <div
+              className="w-24 h-1 mx-auto mt-6"
+              style={{ backgroundColor: DESIGN_CONFIG.colors.primary }}
+            ></div>
           </div>
         </div>
       </section>

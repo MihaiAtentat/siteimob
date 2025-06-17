@@ -41,12 +41,31 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo placeholder */}
+          {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">L</span>
-              </div>
+            <div>
+              {COMPANY_CONFIG.logoImage ? (
+                <img
+                  src={COMPANY_CONFIG.logoImage}
+                  alt={`${COMPANY_CONFIG.name} Logo`}
+                  className="rounded-lg object-contain"
+                  style={{
+                    width: COMPANY_CONFIG.logoSize.width,
+                    height: COMPANY_CONFIG.logoSize.height,
+                  }}
+                />
+              ) : (
+                <div
+                  className="flex items-center justify-center text-white text-lg font-medium rounded-lg"
+                  style={{
+                    backgroundColor: DESIGN_CONFIG.colors.primary,
+                    width: COMPANY_CONFIG.logoSize.width,
+                    height: COMPANY_CONFIG.logoSize.height,
+                  }}
+                >
+                  {COMPANY_CONFIG.logoText}
+                </div>
+              )}
             </div>
           </div>
 
@@ -79,7 +98,9 @@ const Navigation = () => {
             {/* Phone number - Desktop */}
             <div className="hidden lg:flex items-center space-x-2 text-white">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-sm font-medium">0768 111 564</span>
+              <span className="text-sm font-medium">
+                {COMPANY_CONFIG.contact.phone}
+              </span>
             </div>
 
             {/* Mobile menu button */}
