@@ -139,8 +139,7 @@ const PropertyCarousel = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
                         <span className="text-xl font-bold font-heading">
-                          {property.currency}
-                          {property.price.toLocaleString()}
+                          {property.currency}{property.price.toLocaleString()}
                         </span>
                       </div>
                     </div>
@@ -196,6 +195,26 @@ const PropertyCarousel = () => {
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                       {/* Video Section - Portrait Format */}
                       <div className="relative">
+                        <VideoPlayer
+                          videoUrl={property.videoUrl}
+                          thumbnailUrl={property.thumbnailUrl}
+                          className="w-full h-[500px] cursor-pointer object-cover"
+                          aspectRatio="portrait"
+                          onClick={() => handlePropertyClick(property.id)}
+                        />
+
+                        {/* Price at bottom of video */}
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm text-center">
+                            <span className="text-2xl font-bold font-heading">
+                              {property.currency}{property.price.toLocaleString()}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Property Information */}
+                      <div className="p-4 text-center">
                         <h3 className="text-base font-medium text-slate-900 mb-3 font-primary line-clamp-2">
                           {property.title}
                         </h3>
@@ -212,18 +231,6 @@ const PropertyCarousel = () => {
                 ))}
               </div>
             </div>
-
-            {/* Mobile Indicators */}
-            <div className="flex justify-center mt-6 gap-2">
-              {mockProperties.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? "bg-red-600 scale-125"
-                      : "bg-white/50 hover:bg-white/70"
-                  }`}
                   aria-label={`Proprietatea ${index + 1}`}
                 />
               ))}
