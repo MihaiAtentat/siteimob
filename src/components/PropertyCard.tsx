@@ -83,16 +83,16 @@ const PropertyCard = ({
           {title}
         </h3>
 
-        {/* Only Details Button - Centered with improved styling */}
+        {/* Premium Details Button - Expensive Design */}
         <div className="flex justify-center">
           <button
-            className="inline-flex items-center justify-center px-6 py-2 text-sm font-semibold text-white bg-red-600 hover:bg-red-700 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md font-primary"
+            className="inline-flex items-center justify-center px-10 py-4 text-sm font-bold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-primary tracking-wide uppercase border border-red-500/20 min-w-[140px]"
             onClick={(e) => {
               e.stopPropagation();
               onClick?.();
             }}
           >
-            Vezi detalii
+            Vezi Detalii
           </button>
         </div>
       </div>

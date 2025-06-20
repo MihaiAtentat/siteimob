@@ -139,8 +139,7 @@ const PropertyCarousel = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
                         <span className="text-xl font-bold font-heading">
-                          {property.currency}
-                          {property.price.toLocaleString()}
+                          {property.currency}{property.price.toLocaleString()}
                         </span>
                       </div>
                     </div>
@@ -196,21 +195,12 @@ const PropertyCarousel = () => {
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                       {/* Video Section - Portrait Format */}
                       <div className="relative">
-                        <VideoPlayer
-                          videoUrl={property.videoUrl}
-                          thumbnailUrl={property.thumbnailUrl}
-                          className="w-full h-[500px] cursor-pointer object-cover"
-                          aspectRatio="portrait"
+                        <button
                           onClick={() => handlePropertyClick(property.id)}
-                        />
-
-                        {/* Price at bottom of video */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm text-center">
-                            <span className="text-2xl font-bold font-heading">
-                              {property.currency}
-                              {property.price.toLocaleString()}
-                            </span>
+                          className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20"
+                        >
+                          Vezi Detalii
+                        </button>
                           </div>
                         </div>
                       </div>
@@ -221,12 +211,12 @@ const PropertyCarousel = () => {
                           {property.title}
                         </h3>
 
-                        <button
-                          onClick={() => handlePropertyClick(property.id)}
-                          className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 font-primary"
-                        >
-                          Vezi detalii
-                        </button>
+                      <button
+                        onClick={() => handlePropertyClick(property.id)}
+                        className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20"
+                      >
+                        Vezi Detalii
+                      </button>
                       </div>
                     </div>
                   </div>
@@ -252,18 +242,18 @@ const PropertyCarousel = () => {
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex justify-center gap-6 mt-16">
+        {/* Premium Action Buttons */}
+        <div className="flex justify-center gap-8 mt-16">
           <button
             onClick={handleTeamClick}
-            className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-4 px-12 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg font-primary"
+            className="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-yellow-500/20 min-w-[160px]"
           >
             Echipa
           </button>
 
           <button
             onClick={handleContactClick}
-            className="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-4 px-12 rounded-lg text-lg transition-all duration-200 transform hover:scale-105 shadow-lg font-primary"
+            className="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-yellow-500/20 min-w-[160px]"
           >
             Contact
           </button>
