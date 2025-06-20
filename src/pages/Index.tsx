@@ -6,6 +6,7 @@ import PropertySearch from "../components/PropertySearch";
 import PropertyCard from "../components/PropertyCard";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Banner from "../components/Banner";
+import StaticBanner from "../components/StaticBanner";
 import Footer from "../components/Footer";
 
 // Mock data - same as Properties page
@@ -147,8 +148,11 @@ const Index = () => {
       {/* WhatsApp Button */}
       <WhatsAppButton />
 
-      {/* Banner Section - Only on Homepage */}
+      {/* Video Banner Section - Only on Homepage */}
       <Banner />
+
+      {/* Static Banner Section - Below Video Carousel */}
+      <StaticBanner />
 
       {/* Footer */}
       <Footer />

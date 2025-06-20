@@ -214,15 +214,40 @@ const AdminSettings = () => {
                   name="logoImage"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>URL Logo Imagine (opțional)</FormLabel>
+                      <FormLabel>Logo Imagine</FormLabel>
                       <FormControl>
-                        <Input
-                          placeholder="https://example.com/logo.png"
-                          {...field}
-                        />
+                        <div className="space-y-3">
+                          <Input
+                            placeholder="https://example.com/logo.png sau încarcă mai jos"
+                            {...field}
+                          />
+                          <div className="flex items-center gap-4">
+                            <input
+                              type="file"
+                              accept="image/*"
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (file) {
+                                  // În aplicația reală, aici ai uploada fișierul
+                                  const url = URL.createObjectURL(file);
+                                  field.onChange(url);
+                                }
+                              }}
+                              className="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
+                            />
+                            {field.value && (
+                              <img
+                                src={field.value}
+                                alt="Logo preview"
+                                className="w-12 h-12 rounded-lg object-cover border"
+                              />
+                            )}
+                          </div>
+                        </div>
                       </FormControl>
                       <FormDescription>
-                        Înlocuiește logo text dacă este setat
+                        Înlocuiește logo text dacă este setat. Dimensiune
+                        recomandată: 40x40px
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -518,15 +543,40 @@ const AdminSettings = () => {
                 name="bannerBackgroundImage"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Imagine Fundal Banner (opțional)</FormLabel>
+                    <FormLabel>Imagine Fundal Banner</FormLabel>
                     <FormControl>
-                      <Input
-                        placeholder="https://example.com/banner-bg.jpg"
-                        {...field}
-                      />
+                      <div className="space-y-3">
+                        <Input
+                          placeholder="https://example.com/banner.jpg sau încarcă mai jos"
+                          {...field}
+                        />
+                        <div className="flex items-center gap-4">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={(e) => {
+                              const file = e.target.files?.[0];
+                              if (file) {
+                                // În aplicația reală, aici ai uploada fișierul
+                                const url = URL.createObjectURL(file);
+                                field.onChange(url);
+                              }
+                            }}
+                            className="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-red-50 file:text-red-700 hover:file:bg-red-100"
+                          />
+                          {field.value && (
+                            <img
+                              src={field.value}
+                              alt="Banner preview"
+                              className="w-24 h-16 rounded-lg object-cover border"
+                            />
+                          )}
+                        </div>
+                      </div>
                     </FormControl>
                     <FormDescription>
-                      Se suprapune peste culoarea de fundal
+                      Imagine pentru secțiunea banner de pe homepage. Dimensiune
+                      recomandată: 1200x400px
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
