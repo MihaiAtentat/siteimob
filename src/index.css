@@ -101,6 +101,17 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 
+  /* Font Classes for Real Estate Design */
+  .font-heading {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+  }
+
+  .font-primary {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: 400;
+  }
+
   .property-card-hover {
     @apply hover:shadow-xl hover:-translate-y-1 transition-all duration-300;
   }
