@@ -110,7 +110,7 @@ const PropertyCarousel = () => {
         {/* Desktop & Mobile Layout */}
         <div className="relative">
           {/* Desktop Grid - Show 4 videos */}
-          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6 pt-8">
             {mockProperties.map((property) => (
               <div key={property.id}>
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
