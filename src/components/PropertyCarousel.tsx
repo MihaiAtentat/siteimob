@@ -118,7 +118,7 @@ const PropertyCarousel = () => {
           </p>
         </div>
 
-        {/* Desktop: 4 videos in row, Mobile: Carousel */}
+        {/* Desktop & Mobile Layout */}
         <div className="relative">
           {/* Desktop Grid - Show 4 videos */}
           <div className="hidden lg:grid lg:grid-cols-4 gap-6">
@@ -139,7 +139,8 @@ const PropertyCarousel = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
                         <span className="text-xl font-bold font-heading">
-                          {property.currency}{property.price.toLocaleString()}
+                          {property.currency}
+                          {property.price.toLocaleString()}
                         </span>
                       </div>
                     </div>
@@ -153,9 +154,9 @@ const PropertyCarousel = () => {
 
                     <button
                       onClick={() => handlePropertyClick(property.id)}
-                      className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 font-primary text-sm"
+                      className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20 text-xs"
                     >
-                      Vezi detalii
+                      Vezi Detalii
                     </button>
                   </div>
                 </div>
@@ -207,7 +208,8 @@ const PropertyCarousel = () => {
                         <div className="absolute bottom-4 left-4 right-4">
                           <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm text-center">
                             <span className="text-2xl font-bold font-heading">
-                              {property.currency}{property.price.toLocaleString()}
+                              {property.currency}
+                              {property.price.toLocaleString()}
                             </span>
                           </div>
                         </div>
@@ -231,6 +233,18 @@ const PropertyCarousel = () => {
                 ))}
               </div>
             </div>
+
+            {/* Mobile Indicators */}
+            <div className="flex justify-center mt-6 gap-2">
+              {mockProperties.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-red-600 scale-125"
+                      : "bg-white/50 hover:bg-white/70"
+                  }`}
                   aria-label={`Proprietatea ${index + 1}`}
                 />
               ))}
