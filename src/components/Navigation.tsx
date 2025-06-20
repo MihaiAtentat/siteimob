@@ -26,11 +26,11 @@ const Navigation = () => {
 
   const getNavClasses = () => {
     if (!isHomepage) {
-      return "bg-slate-900/95 backdrop-blur-sm border-b border-slate-800";
+      return "bg-red-50/95 backdrop-blur-sm border-b border-red-100";
     }
 
     if (scrolled) {
-      return "bg-slate-900/95 backdrop-blur-sm border-b border-slate-800";
+      return "bg-red-50/95 backdrop-blur-sm border-b border-red-100";
     }
 
     return "bg-transparent border-b border-transparent";
@@ -75,19 +75,31 @@ const Navigation = () => {
             <div className="ml-4 flex items-baseline space-x-8">
               <a
                 href="/proprietati"
-                className="text-gray-300 hover:text-red-400 px-3 py-2 text-sm font-medium transition-colors"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isHomepage && !scrolled
+                    ? "text-white hover:text-red-200"
+                    : "text-red-700 hover:text-red-600"
+                }`}
               >
                 Proprietăți
               </a>
               <a
                 href="/echipa"
-                className="text-gray-300 hover:text-red-400 px-3 py-2 text-sm font-medium transition-colors"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isHomepage && !scrolled
+                    ? "text-white hover:text-red-200"
+                    : "text-red-700 hover:text-red-600"
+                }`}
               >
                 Echipa
               </a>
               <a
                 href="/contact"
-                className="text-gray-300 hover:text-red-400 px-3 py-2 text-sm font-medium transition-colors"
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isHomepage && !scrolled
+                    ? "text-white hover:text-red-200"
+                    : "text-red-700 hover:text-red-600"
+                }`}
               >
                 Contact
               </a>
@@ -97,7 +109,11 @@ const Navigation = () => {
           {/* Phone number and Mobile menu button */}
           <div className="flex items-center space-x-4">
             {/* Phone number - Desktop */}
-            <div className="hidden lg:flex items-center space-x-2 text-white">
+            <div
+              className={`hidden lg:flex items-center space-x-2 ${
+                isHomepage && !scrolled ? "text-white" : "text-red-700"
+              }`}
+            >
               <Phone className="h-4 w-4 text-green-500" />
               <span className="text-sm font-medium">
                 {COMPANY_CONFIG.contact.phone}
@@ -108,7 +124,11 @@ const Navigation = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
+                className={`p-2 rounded-md transition-colors ${
+                  isHomepage && !scrolled
+                    ? "text-white hover:text-red-200"
+                    : "text-red-700 hover:text-red-600"
+                }`}
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
@@ -126,34 +146,36 @@ const Navigation = () => {
       <div
         className={`md:hidden transition-all duration-300 ease-in-out ${mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"}`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-900/98 border-t border-slate-800">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-red-50/98 border-t border-red-100">
           <a
             href="/proprietati"
-            className="text-gray-300 hover:text-red-400 block px-3 py-3 text-base font-medium rounded-md hover:bg-slate-800/50 transition-colors"
+            className="text-red-700 hover:text-red-600 block px-3 py-3 text-base font-medium rounded-md hover:bg-red-100/50 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Proprietăți
           </a>
           <a
             href="/echipa"
-            className="text-gray-300 hover:text-red-400 block px-3 py-3 text-base font-medium rounded-md hover:bg-slate-800/50 transition-colors"
+            className="text-red-700 hover:text-red-600 block px-3 py-3 text-base font-medium rounded-md hover:bg-red-100/50 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Echipa
           </a>
           <a
             href="/contact"
-            className="text-gray-300 hover:text-red-400 block px-3 py-3 text-base font-medium rounded-md hover:bg-slate-800/50 transition-colors"
+            className="text-red-700 hover:text-red-600 block px-3 py-3 text-base font-medium rounded-md hover:bg-red-100/50 transition-colors"
             onClick={() => setMobileMenuOpen(false)}
           >
             Contact
           </a>
 
           {/* Phone number in mobile menu */}
-          <div className="px-3 py-3 border-t border-slate-700 mt-2">
-            <div className="flex items-center space-x-2 text-white">
+          <div className="px-3 py-3 border-t border-red-200 mt-2">
+            <div className="flex items-center space-x-2 text-red-700">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-base font-medium">0768 111 564</span>
+              <span className="text-base font-medium">
+                {COMPANY_CONFIG.contact.phone}
+              </span>
             </div>
           </div>
         </div>

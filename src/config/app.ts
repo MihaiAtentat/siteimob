@@ -14,8 +14,7 @@ export const COMPANY_CONFIG = {
   logoText: "CV", // Se afișează în navbar
 
   // Logo imagine (înlocuiește logoText dacă este definit)
-  // Comentează linia de mai jos pentru a folosi logoText
-  // logoImage: "/logo.png", // Pune fișierul în public/logo.png
+  logoImage: "", // URL către imaginea logo-ului
 
   // Dimensiuni logo
   logoSize: {
@@ -55,7 +54,7 @@ export const COMPANY_CONFIG = {
     subtitle: "Consultanță gratuită pentru toate proprietățile noastre",
     buttonText: "Contactează-ne acum",
     buttonLink: "/contact",
-    backgroundImage: "/images/banner-bg.jpg",
+    backgroundImage: "",
     backgroundColor: "#dc2626",
   },
 };
