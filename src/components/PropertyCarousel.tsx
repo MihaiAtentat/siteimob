@@ -105,19 +105,8 @@ const PropertyCarousel = () => {
   };
 
   return (
-    <section className="bg-slate-900 py-16">
+    <section className="bg-slate-900 pt-px pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-heading">
-            Proprietăți Disponibile
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto font-primary">
-            Descoperă cele mai bune oportunități imobiliare din portofoliul
-            nostru
-          </p>
-        </div>
-
         {/* Desktop & Mobile Layout */}
         <div className="relative">
           {/* Desktop Grid - Show 4 videos */}
