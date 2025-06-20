@@ -105,7 +105,7 @@ const PropertyCarousel = () => {
   };
 
   return (
-    <section className="bg-slate-900 pt-px pb-16">
+    <section className="bg-gray-100 pt-px pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop & Mobile Layout */}
         <div className="relative">
@@ -113,7 +113,7 @@ const PropertyCarousel = () => {
           <div className="hidden lg:grid lg:grid-cols-4 gap-6 pt-8">
             {mockProperties.map((property) => (
               <div key={property.id}>
-                <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden h-full">
                   {/* Video Section - Portrait Format */}
                   <div className="relative">
                     <VideoPlayer
@@ -136,8 +136,8 @@ const PropertyCarousel = () => {
                   </div>
 
                   {/* Property Information */}
-                  <div className="p-4 text-center">
-                    <h3 className="text-sm font-medium text-slate-900 mb-2 font-primary line-clamp-2 h-10">
+                  <div className="p-4 text-center -mb-1">
+                    <h3 className="text-sm font-medium text-gray-300 mb-2 font-primary line-clamp-2 h-10">
                       {property.title}
                     </h3>
 
@@ -182,7 +182,7 @@ const PropertyCarousel = () => {
               >
                 {mockProperties.map((property) => (
                   <div key={property.id} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden">
                       {/* Video Section - Portrait Format */}
                       <div className="relative">
                         <VideoPlayer
@@ -206,7 +206,7 @@ const PropertyCarousel = () => {
 
                       {/* Property Information */}
                       <div className="p-4 text-center">
-                        <h3 className="text-base font-medium text-slate-900 mb-3 font-primary line-clamp-2">
+                        <h3 className="text-base font-medium text-gray-300 mb-3 font-primary line-clamp-2">
                           {property.title}
                         </h3>
 
@@ -245,14 +245,14 @@ const PropertyCarousel = () => {
         <div className="flex justify-center gap-8 mt-16">
           <button
             onClick={handleTeamClick}
-            className="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-yellow-500/20 min-w-[160px]"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-red-500/20 min-w-[160px]"
           >
             Echipa
           </button>
 
           <button
             onClick={handleContactClick}
-            className="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-yellow-500/20 min-w-[160px]"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-5 px-16 rounded-md text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl font-primary tracking-wider uppercase border border-red-500/20 min-w-[160px]"
           >
             Contact
           </button>
