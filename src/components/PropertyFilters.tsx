@@ -12,35 +12,35 @@ import { Separator } from "./ui/separator";
 
 const PropertyFilters = () => {
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-lg border border-red-100 lg:sticky lg:top-24 mb-6 lg:mb-0">
+    <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-red-100 lg:sticky lg:top-24 mb-4 lg:mb-0">
       {/* Header */}
-      <div className="mb-4 sm:mb-6">
-        <h2 className="text-lg sm:text-xl font-bold text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <h2 className="text-base sm:text-lg font-bold text-slate-800">
           Filtrare proprietăți
         </h2>
-        <p className="text-sm text-slate-600">172 rezultate</p>
+        <p className="text-xs text-slate-600">172 rezultate</p>
       </div>
 
-      <Separator className="bg-red-200 mb-4 sm:mb-6" />
+      <Separator className="bg-red-200 mb-3 sm:mb-4" />
 
       {/* Property Type */}
-      <div className="mb-4 sm:mb-6">
-        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
           Tip proprietate
         </label>
         <Input
           placeholder="Caută după zonă..."
-          className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+          className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
         />
       </div>
 
       {/* Zone */}
-      <div className="mb-4 sm:mb-6">
-        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
           Zonă
         </label>
         <Select>
-          <SelectTrigger className="bg-slate-50 border-red-200 text-slate-800 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12">
+          <SelectTrigger className="bg-slate-50 border-red-200 text-slate-800 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm">
             <SelectValue placeholder="Selectează tipul" />
           </SelectTrigger>
           <SelectContent>
@@ -54,33 +54,33 @@ const PropertyFilters = () => {
       </div>
 
       {/* Price Range */}
-      <div className="mb-4 sm:mb-6">
-        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
           Preț (€)
         </label>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           <Input
             placeholder="Min"
-            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
           />
           <Input
             placeholder="Max"
-            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
           />
         </div>
       </div>
 
       {/* Rooms */}
-      <div className="mb-4 sm:mb-6">
-        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
           Camere
         </label>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-1">
           {[1, 2, 3, "4+"].map((num) => (
             <Button
               key={num}
               variant="outline"
-              className="border-red-200 text-slate-700 hover:bg-red-50 hover:border-red-300 h-8 sm:h-10 text-sm"
+              className="border-red-200 text-slate-700 hover:bg-red-50 hover:border-red-300 h-7 sm:h-8 text-xs"
             >
               {num}
             </Button>
