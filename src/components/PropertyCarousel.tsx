@@ -113,7 +113,7 @@ const PropertyCarousel = () => {
           <div className="hidden lg:grid lg:grid-cols-4 gap-6 pt-8">
             {mockProperties.map((property) => (
               <div key={property.id}>
-                <div className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-slate-700 rounded-2xl shadow-xl overflow-hidden h-full">
                   {/* Video Section - Portrait Format */}
                   <div className="relative">
                     <VideoPlayer
@@ -123,20 +123,14 @@ const PropertyCarousel = () => {
                       aspectRatio="portrait"
                       onClick={() => handlePropertyClick(property.id)}
                     />
-
-                    {/* Price at bottom of video */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
-                        <span className="text-xl font-bold font-heading">
-                          {property.currency}
-                          {property.price.toLocaleString()}
-                        </span>
-                      </div>
-                    </div>
                   </div>
 
                   {/* Property Information */}
                   <div className="p-4 text-center -mb-1">
+                    <div className="text-lg font-bold text-gray-200 mb-2 font-heading">
+                      {property.currency}
+                      {property.price.toLocaleString()}
+                    </div>
                     <h3 className="text-sm font-medium text-gray-300 mb-2 font-primary line-clamp-2 h-10">
                       {property.title}
                     </h3>
@@ -182,7 +176,7 @@ const PropertyCarousel = () => {
               >
                 {mockProperties.map((property) => (
                   <div key={property.id} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-slate-900 rounded-2xl shadow-xl overflow-hidden">
+                    <div className="bg-slate-700 rounded-2xl shadow-xl overflow-hidden">
                       {/* Video Section - Portrait Format */}
                       <div className="relative">
                         <VideoPlayer
@@ -192,20 +186,14 @@ const PropertyCarousel = () => {
                           aspectRatio="portrait"
                           onClick={() => handlePropertyClick(property.id)}
                         />
-
-                        {/* Price at bottom of video */}
-                        <div className="absolute bottom-4 left-4 right-4">
-                          <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm text-center">
-                            <span className="text-2xl font-bold font-heading">
-                              {property.currency}
-                              {property.price.toLocaleString()}
-                            </span>
-                          </div>
-                        </div>
                       </div>
 
                       {/* Property Information */}
                       <div className="p-4 text-center">
+                        <div className="text-xl font-bold text-gray-200 mb-3 font-heading">
+                          {property.currency}
+                          {property.price.toLocaleString()}
+                        </div>
                         <h3 className="text-base font-medium text-gray-300 mb-3 font-primary line-clamp-2">
                           {property.title}
                         </h3>

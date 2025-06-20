@@ -35,7 +35,7 @@ const PropertyCard = ({
   onClick,
 }: PropertyCardProps) => {
   return (
-    <div className="bg-slate-900 rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden w-full h-[600px] flex flex-col property-card">
+    <div className="bg-slate-700 rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden w-full h-[600px] flex flex-col property-card">
       {/* Video Player - Top Section */}
       <div className="relative rounded-t-lg overflow-hidden">
         <VideoPlayer
