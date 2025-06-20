@@ -119,25 +119,25 @@ const PropertyCarousel = () => {
                     <VideoPlayer
                       videoUrl={property.videoUrl}
                       thumbnailUrl={property.thumbnailUrl}
-                      className="w-full h-[400px] cursor-pointer object-cover"
+                      className="w-full h-[450px] cursor-pointer object-cover"
                       aspectRatio="portrait"
                       onClick={() => handlePropertyClick(property.id)}
                     />
                   </div>
 
                   {/* Property Information */}
-                  <div className="p-4 text-center -mb-1">
-                    <div className="text-lg font-bold text-gray-200 mb-2 font-heading">
+                  <div className="p-2 text-center">
+                    <div className="text-base font-bold text-gray-200 mb-1 font-heading">
                       {property.currency}
                       {property.price.toLocaleString()}
                     </div>
-                    <h3 className="text-sm font-medium text-gray-300 mb-2 font-primary line-clamp-2 h-10">
+                    <h3 className="text-xs font-medium text-gray-300 mb-2 font-primary line-clamp-2 h-8 leading-tight">
                       {property.title}
                     </h3>
 
                     <button
                       onClick={() => handlePropertyClick(property.id)}
-                      className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-3 px-6 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20 text-xs"
+                      className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20 text-xs"
                     >
                       Vezi Detalii
                     </button>
