@@ -89,25 +89,25 @@ const PropertyFilters = () => {
       </div>
 
       {/* Useful Area */}
-      <div className="mb-4 sm:mb-6">
-        <label className="block text-sm font-medium mb-2 sm:mb-3 text-slate-800">
+      <div className="mb-3 sm:mb-4">
+        <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
           Suprafața utilă
         </label>
-        <div className="flex gap-2">
+        <div className="flex gap-1">
           <Input
             placeholder="Min"
-            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
           />
           <Input
             placeholder="Max"
-            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-10 sm:h-12"
+            className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
           />
         </div>
       </div>
 
       {/* Apply Filters Button */}
-      <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 sm:py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-200">
-        <SlidersHorizontal className="h-4 w-4 mr-2" />
+      <Button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 text-sm">
+        <SlidersHorizontal className="h-3 w-3 mr-2" />
         Aplică filtrele
       </Button>
     </div>
