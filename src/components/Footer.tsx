@@ -99,19 +99,28 @@ const Footer = () => {
                 </div>
               </div>
 
-              {/* Maps Button */}
+              {/* Embedded Map */}
+              <div className="mt-3">
+                <iframe
+                  src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dOWTgamKKuV6qs&q=${COMPANY_CONFIG.address.coordinates}`}
+                  width="100%"
+                  height="120"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-lg"
+                  title="Locația noastră"
+                />
+              </div>
+
+              {/* Small link to open in full Google Maps */}
               <button
                 onClick={openInMaps}
-                className="flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
+                className="text-xs text-gray-400 hover:text-white transition-colors underline mt-2"
               >
-                <Map className="h-4 w-4" />
-                <span>Vezi pe Google Maps</span>
+                Deschide în Google Maps
               </button>
-
-              {/* Coordinates for reference */}
-              <div className="text-xs text-gray-500 font-mono">
-                {COMPANY_CONFIG.address.coordinates}
-              </div>
             </div>
           </div>
 
