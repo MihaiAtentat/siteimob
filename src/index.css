@@ -124,6 +124,11 @@
   overflow: hidden;
 }
 
+/* Text Shadow for Better Readability */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 /* Custom scrollbar for better UX */
 ::-webkit-scrollbar {
   width: 8px;
