@@ -118,100 +118,137 @@ const PropertyCarousel = () => {
           </p>
         </div>
 
-        {/* Carousel Container */}
+        {/* Desktop: 4 videos in row, Mobile: Carousel */}
         <div className="relative">
-          {/* Navigation Arrows */}
-          <button
-            onClick={goToPrevious}
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
-            aria-label="Proprietatea anterioară"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
+          {/* Desktop Grid - Show 4 videos */}
+          <div className="hidden lg:grid lg:grid-cols-4 gap-6">
+            {mockProperties.map((property) => (
+              <div key={property.id}>
+                <div className="bg-white rounded-2xl shadow-xl overflow-hidden h-full">
+                  {/* Video Section - Portrait Format */}
+                  <div className="relative">
+                    <VideoPlayer
+                      videoUrl={property.videoUrl}
+                      thumbnailUrl={property.thumbnailUrl}
+                      className="w-full h-[400px] cursor-pointer object-cover"
+                      aspectRatio="portrait"
+                      onClick={() => handlePropertyClick(property.id)}
+                    />
 
-          <button
-            onClick={goToNext}
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
-            aria-label="Proprietatea următoare"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
-
-          {/* Properties Display */}
-          <div className="overflow-hidden rounded-2xl">
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {mockProperties.map((property, index) => (
-                <div key={property.id} className="w-full flex-shrink-0">
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden mx-4">
-                    {/* Video Section - Portrait Format */}
-                    <div className="relative">
-                      <VideoPlayer
-                        videoUrl={property.videoUrl}
-                        thumbnailUrl={property.thumbnailUrl}
-                        className="w-full h-[600px] cursor-pointer object-cover"
-                        aspectRatio="portrait"
-                        onClick={() => handlePropertyClick(property.id)}
-                      />
-
-                      {/* Price Badge */}
-                      <div className="absolute top-4 left-4 bg-red-600/95 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
-                        <span className="text-2xl font-bold font-heading">
+                    {/* Price at bottom of video */}
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
+                        <span className="text-xl font-bold font-heading">
                           {property.currency}
                           {property.price.toLocaleString()}
                         </span>
                       </div>
                     </div>
+                  </div>
 
-                    {/* Property Information */}
-                    <div className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-slate-900 mb-3 font-primary line-clamp-2">
-                        {property.title}
-                      </h3>
+                  {/* Property Information */}
+                  <div className="p-4 text-center">
+                    <h3 className="text-sm font-medium text-slate-900 mb-2 font-primary line-clamp-2 h-10">
+                      {property.title}
+                    </h3>
 
-                      <p className="text-sm text-slate-600 mb-4 font-primary">
-                        {property.location}
-                      </p>
-
-                      <div className="flex justify-center gap-4 text-sm text-slate-700 mb-6">
-                        <span>{property.area} mp</span>
-                        {property.rooms && <span>•</span>}
-                        {property.rooms && <span>{property.rooms} camere</span>}
-                      </div>
-
-                      <button
-                        onClick={() => handlePropertyClick(property.id)}
-                        className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 font-primary"
-                      >
-                        Vezi Detalii
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => handlePropertyClick(property.id)}
+                      className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 font-primary text-sm"
+                    >
+                      Vezi detalii
+                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
-          {/* Indicators */}
-          <div className="flex justify-center mt-8 gap-2">
-            {mockProperties.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-red-600 scale-125"
-                    : "bg-white/50 hover:bg-white/70"
-                }`}
-                aria-label={`Proprietatea ${index + 1}`}
-              />
-            ))}
+          {/* Mobile Carousel */}
+          <div className="lg:hidden relative">
+            {/* Navigation Arrows - Mobile */}
+            <button
+              onClick={goToPrevious}
+              onTouchStart={() => setIsAutoPlaying(false)}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300"
+              aria-label="Proprietatea anterioară"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <button
+              onClick={goToNext}
+              onTouchStart={() => setIsAutoPlaying(false)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 rounded-full transition-all duration-300"
+              aria-label="Proprietatea următoare"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Mobile Properties Display */}
+            <div className="overflow-hidden rounded-2xl">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {mockProperties.map((property) => (
+                  <div key={property.id} className="w-full flex-shrink-0 px-2">
+                    <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                      {/* Video Section - Portrait Format */}
+                      <div className="relative">
+                        <VideoPlayer
+                          videoUrl={property.videoUrl}
+                          thumbnailUrl={property.thumbnailUrl}
+                          className="w-full h-[500px] cursor-pointer object-cover"
+                          aspectRatio="portrait"
+                          onClick={() => handlePropertyClick(property.id)}
+                        />
+
+                        {/* Price at bottom of video */}
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm text-center">
+                            <span className="text-2xl font-bold font-heading">
+                              {property.currency}
+                              {property.price.toLocaleString()}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Property Information */}
+                      <div className="p-4 text-center">
+                        <h3 className="text-base font-medium text-slate-900 mb-3 font-primary line-clamp-2">
+                          {property.title}
+                        </h3>
+
+                        <button
+                          onClick={() => handlePropertyClick(property.id)}
+                          className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 font-primary"
+                        >
+                          Vezi detalii
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Indicators */}
+            <div className="flex justify-center mt-6 gap-2">
+              {mockProperties.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? "bg-red-600 scale-125"
+                      : "bg-white/50 hover:bg-white/70"
+                  }`}
+                  aria-label={`Proprietatea ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
