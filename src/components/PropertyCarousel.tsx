@@ -139,7 +139,8 @@ const PropertyCarousel = () => {
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="bg-black/70 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-center">
                         <span className="text-xl font-bold font-heading">
-                          {property.currency}{property.price.toLocaleString()}
+                          {property.currency}
+                          {property.price.toLocaleString()}
                         </span>
                       </div>
                     </div>
@@ -195,28 +196,16 @@ const PropertyCarousel = () => {
                     <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
                       {/* Video Section - Portrait Format */}
                       <div className="relative">
+                        <h3 className="text-base font-medium text-slate-900 mb-3 font-primary line-clamp-2">
+                          {property.title}
+                        </h3>
+
                         <button
                           onClick={() => handlePropertyClick(property.id)}
                           className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20"
                         >
                           Vezi Detalii
                         </button>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Property Information */}
-                      <div className="p-4 text-center">
-                        <h3 className="text-base font-medium text-slate-900 mb-3 font-primary line-clamp-2">
-                          {property.title}
-                        </h3>
-
-                      <button
-                        onClick={() => handlePropertyClick(property.id)}
-                        className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20"
-                      >
-                        Vezi Detalii
-                      </button>
                       </div>
                     </div>
                   </div>
