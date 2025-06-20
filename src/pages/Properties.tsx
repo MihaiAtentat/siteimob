@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SlidersHorizontal, X } from "lucide-react";
 import Navigation from "../components/Navigation";
 import PropertyCard from "../components/PropertyCard";
 import PropertyFilters from "../components/PropertyFilters";
@@ -95,6 +96,7 @@ const Properties = () => {
   const navigate = useNavigate();
   const [properties] = useState(mockProperties);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFilters, setShowFilters] = useState(false);
   const propertiesPerPage = 9; // 3x3 grid
 
   const totalPages = Math.ceil(properties.length / propertiesPerPage);
@@ -137,6 +139,26 @@ const Properties = () => {
             <div className="w-24 h-1 bg-red-600 mx-auto mt-6"></div>
           </div>
 
+          {/* Mobile Filter Toggle Button */}
+          <div className="lg:hidden mb-6">
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+            >
+              {showFilters ? (
+                <>
+                  <X className="w-5 h-5" />
+                  Ascunde filtrele
+                </>
+              ) : (
+                <>
+                  <SlidersHorizontal className="w-5 h-5" />
+                  Afișează filtrele
+                </>
+              )}
+            </button>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             {/* Main Content - Properties Grid */}
             <div className="lg:col-span-3">
@@ -174,7 +196,11 @@ const Properties = () => {
             </div>
 
             {/* Sidebar - Filters */}
-            <div className="lg:col-span-1 order-first lg:order-last">
+            <div
+              className={`lg:col-span-1 order-first lg:order-last ${
+                showFilters ? "block" : "hidden lg:block"
+              }`}
+            >
               <PropertyFilters />
             </div>
           </div>
