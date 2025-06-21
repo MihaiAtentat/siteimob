@@ -52,7 +52,7 @@ const Navigation = () => {
 
           {/* Navigation links - Desktop */}
           <div className="hidden md:block">
-            <div className="ml-8 flex items-baseline space-x-8">
+            <div className="ml-16 flex items-baseline space-x-8">
               <a
                 href="/proprietati"
                 className="text-gray-300 hover:text-red-400 px-3 py-2 text-sm font-medium transition-colors"
