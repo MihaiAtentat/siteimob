@@ -131,9 +131,9 @@ const Properties = () => {
       <div className="pt-20 sm:pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
-          <div className="mb-16 text-center pb-6 border-b border-gray-200">
+          <div className="mb-16 text-left pb-6 border-b border-gray-200">
             <h1 className="text-3xl lg:text-4xl font-normal text-slate-800 font-heading">
-              Oferte imobiliare
+              Oferte imobiliare Casa Vis
             </h1>
           </div>
 
