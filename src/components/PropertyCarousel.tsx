@@ -115,34 +115,49 @@ const PropertyCarousel = () => {
           <div className="hidden lg:grid lg:grid-cols-4 gap-6 pt-8">
             {mockProperties.map((property) => (
               <div key={property.id}>
-                <div className="bg-slate-700 rounded-2xl shadow-xl overflow-hidden h-full">
+                <div className="bg-white rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden h-[500px] flex flex-col property-card border border-gray-200">
                   {/* Video Section - Portrait Format */}
-                  <div className="relative">
+                  <div className="relative rounded-t-lg overflow-hidden">
                     <VideoPlayer
                       videoUrl={property.videoUrl}
                       thumbnailUrl={property.thumbnailUrl}
-                      className="w-full h-[450px] cursor-pointer object-cover"
-                      aspectRatio="portrait"
+                      className="w-full h-[380px] cursor-pointer"
+                      aspectRatio="mobile"
                       onClick={() => handlePropertyClick(property.id)}
                     />
                   </div>
 
-                  {/* Property Information */}
-                  <div className="p-2 text-center">
-                    <div className="text-base font-bold text-gray-200 mb-1 font-heading">
+                  {/* Property Information - Clean White Design */}
+                  <div className="px-3 pt-2 pb-2 bg-white flex flex-col h-[120px] justify-between text-center border-t border-gray-200">
+                    {/* Price - Elegant dark font */}
+                    <div className="text-lg font-bold text-gray-900 mb-2 font-heading">
                       {property.currency}
                       {property.price.toLocaleString()}
                     </div>
-                    <h3 className="text-xs font-medium text-gray-300 mb-2 font-primary line-clamp-2 h-8 leading-tight">
+
+                    {/* Title/Description - Clean typography */}
+                    <h3
+                      className="text-xs text-gray-600 overflow-hidden flex-shrink-0 leading-tight mb-2 font-primary"
+                      style={{
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        maxHeight: "1.8rem",
+                        fontWeight: "500",
+                      }}
+                    >
                       {property.title}
                     </h3>
 
-                    <button
-                      onClick={() => handlePropertyClick(property.id)}
-                      className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-2 px-4 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20 text-xs"
-                    >
-                      Vezi Detalii
-                    </button>
+                    {/* Premium Details Button - Compact Design */}
+                    <div className="flex justify-center">
+                      <button
+                        onClick={() => handlePropertyClick(property.id)}
+                        className="inline-flex items-center justify-center px-4 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-md transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-primary tracking-wide uppercase border border-red-500/20 min-w-[80px]"
+                      >
+                        Vezi Detalii
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -178,34 +193,49 @@ const PropertyCarousel = () => {
               >
                 {mockProperties.map((property) => (
                   <div key={property.id} className="w-full flex-shrink-0 px-2">
-                    <div className="bg-slate-700 rounded-2xl shadow-xl overflow-hidden">
+                    <div className="bg-white rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden w-full h-[500px] flex flex-col property-card border border-gray-200">
                       {/* Video Section - Portrait Format */}
-                      <div className="relative">
+                      <div className="relative rounded-t-lg overflow-hidden">
                         <VideoPlayer
                           videoUrl={property.videoUrl}
                           thumbnailUrl={property.thumbnailUrl}
-                          className="w-full h-[500px] cursor-pointer object-cover"
-                          aspectRatio="portrait"
+                          className="w-full h-[380px] cursor-pointer"
+                          aspectRatio="mobile"
                           onClick={() => handlePropertyClick(property.id)}
                         />
                       </div>
 
-                      {/* Property Information */}
-                      <div className="p-4 text-center">
-                        <div className="text-xl font-bold text-gray-200 mb-3 font-heading">
+                      {/* Property Information - Clean White Design */}
+                      <div className="px-3 pt-2 pb-2 bg-white flex flex-col h-[120px] justify-between text-center border-t border-gray-200">
+                        {/* Price - Elegant dark font */}
+                        <div className="text-lg font-bold text-gray-900 mb-2 font-heading">
                           {property.currency}
                           {property.price.toLocaleString()}
                         </div>
-                        <h3 className="text-base font-medium text-gray-300 mb-3 font-primary line-clamp-2">
+
+                        {/* Title/Description - Clean typography */}
+                        <h3
+                          className="text-xs text-gray-600 overflow-hidden flex-shrink-0 leading-tight mb-2 font-primary"
+                          style={{
+                            display: "-webkit-box",
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: "vertical",
+                            maxHeight: "1.8rem",
+                            fontWeight: "500",
+                          }}
+                        >
                           {property.title}
                         </h3>
 
-                        <button
-                          onClick={() => handlePropertyClick(property.id)}
-                          className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-8 rounded-md transition-all duration-300 transform hover:scale-105 font-primary shadow-lg hover:shadow-xl tracking-wide uppercase border border-red-500/20"
-                        >
-                          Vezi Detalii
-                        </button>
+                        {/* Premium Details Button - Compact Design */}
+                        <div className="flex justify-center">
+                          <button
+                            onClick={() => handlePropertyClick(property.id)}
+                            className="inline-flex items-center justify-center px-4 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-md transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-primary tracking-wide uppercase border border-red-500/20 min-w-[80px]"
+                          >
+                            Vezi Detalii
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
