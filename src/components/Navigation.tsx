@@ -79,24 +79,10 @@ const Navigation = () => {
             {/* Phone number - Desktop */}
             <div className="hidden lg:flex items-center space-x-2 text-white mr-4">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-sm font-medium">{COMPANY_CONFIG.contact.phone}</span>
+              <span className="text-sm font-medium">
+                {COMPANY_CONFIG.contact.phone}
+              </span>
             </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
-          </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -147,7 +133,9 @@ const Navigation = () => {
           <div className="px-3 py-3 border-t border-slate-700 mt-2">
             <div className="flex items-center space-x-2 text-white">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-base font-medium">{COMPANY_CONFIG.contact.phone}</span>
+              <span className="text-base font-medium">
+                {COMPANY_CONFIG.contact.phone}
+              </span>
             </div>
           </div>
         </div>
