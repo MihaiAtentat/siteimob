@@ -131,7 +131,7 @@ const Properties = () => {
       <div className="pt-20 sm:pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
-          <div className="mb-6 text-left pb-4 border-b border-gray-200">
+          <div className="mb-2 text-left pb-2 border-b border-gray-200">
             <h1 className="text-3xl lg:text-4xl font-normal text-slate-800 font-heading">
               Oferte imobiliare Casa Vis
             </h1>
@@ -157,7 +157,7 @@ const Properties = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 border-t border-gray-100 pt-4">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 border-t border-gray-100 pt-2">
             {/* Main Content - Properties Grid */}
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">

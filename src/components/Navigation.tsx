@@ -42,7 +42,7 @@ const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-sm ${getNavClasses()}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
@@ -52,7 +52,7 @@ const Navigation = () => {
 
           {/* Navigation links - Desktop */}
           <div className="hidden md:block">
-            <div className="ml-4 flex items-baseline space-x-8">
+            <div className="ml-8 flex items-baseline space-x-8">
               <a
                 href="/proprietati"
                 className="text-gray-300 hover:text-red-400 px-3 py-2 text-sm font-medium transition-colors"
@@ -74,15 +74,14 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Phone number and Mobile menu button */}
-          <div className="flex items-center space-x-4">
+          {/* Phone number - Extended across the page */}
+          <div className="flex items-center ml-12 flex-1">
             {/* Phone number - Desktop */}
             <div className="hidden lg:flex items-center space-x-2 text-white">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-sm font-medium">
-                {COMPANY_CONFIG.contact.phone}
-              </span>
+              <span className="text-sm font-medium">{COMPANY_CONFIG.contact.phone}</span>
             </div>
+          </div>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -133,9 +132,7 @@ const Navigation = () => {
           <div className="px-3 py-3 border-t border-slate-700 mt-2">
             <div className="flex items-center space-x-2 text-white">
               <Phone className="h-4 w-4 text-green-500" />
-              <span className="text-base font-medium">
-                {COMPANY_CONFIG.contact.phone}
-              </span>
+              <span className="text-base font-medium">{COMPANY_CONFIG.contact.phone}</span>
             </div>
           </div>
         </div>
