@@ -12,24 +12,22 @@ import { Separator } from "./ui/separator";
 
 const PropertyFilters = () => {
   return (
-    <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md border border-red-100 lg:sticky lg:top-24 mb-4 lg:mb-0">
+    <div className="bg-transparent p-3 sm:p-4 lg:sticky lg:top-20 mb-4 lg:mb-0">
       {/* Header */}
-      <div className="mb-3 sm:mb-4">
-        <h2 className="text-base sm:text-lg font-bold text-slate-800">
+      <div className="mb-4 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-bold text-slate-800">
           Filtrare proprietăți
         </h2>
-        <p className="text-xs text-slate-600">172 rezultate</p>
+        <p className="text-sm text-slate-600">172 rezultate</p>
       </div>
 
-      <Separator className="bg-red-200 mb-3 sm:mb-4" />
-
-      {/* Property Type */}
+      {/* Property Search */}
       <div className="mb-3 sm:mb-4">
         <label className="block text-xs sm:text-sm font-medium mb-1 sm:mb-2 text-slate-800">
-          Tip proprietate
+          Caută proprietate
         </label>
         <Input
-          placeholder="Caută după zonă..."
+          placeholder="Caută după zonă, adresă sau cuvinte cheie..."
           className="bg-slate-50 border-red-200 text-slate-800 placeholder:text-slate-500 focus:border-red-500 focus:ring-red-500 h-8 sm:h-9 text-sm"
         />
       </div>
