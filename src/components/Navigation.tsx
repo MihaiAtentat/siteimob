@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { COMPANY_CONFIG, DESIGN_CONFIG } from "@/config/app";
+import LogoDisplay from "./LogoDisplay";
 
 const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -45,28 +46,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              {COMPANY_CONFIG.logoImage ? (
-                <img
-                  src={COMPANY_CONFIG.logoImage}
-                  alt={`${COMPANY_CONFIG.name} Logo`}
-                  className="rounded-lg object-contain"
-                  style={{
-                    width: COMPANY_CONFIG.logoSize.width,
-                    height: COMPANY_CONFIG.logoSize.height,
-                  }}
-                />
-              ) : (
-                <div
-                  className="flex items-center justify-center text-white text-lg font-medium rounded-lg"
-                  style={{
-                    backgroundColor: DESIGN_CONFIG.colors.primary,
-                    width: COMPANY_CONFIG.logoSize.width,
-                    height: COMPANY_CONFIG.logoSize.height,
-                  }}
-                >
-                  {COMPANY_CONFIG.logoText}
-                </div>
-              )}
+              <LogoDisplay size="md" />
             </a>
           </div>
 
