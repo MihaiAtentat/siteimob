@@ -14,7 +14,8 @@ export const COMPANY_CONFIG = {
   logoText: "CV", // Se afișează în navbar
 
   // Logo imagine (înlocuiește logoText dacă este definit)
-  logoImage: "", // URL către imaginea logo-ului
+  // TODO: ÎNLOCUIEȘTE cu fetch din baza de date
+  logoImage: localStorage.getItem("company_logo") || "", // URL către imaginea logo-ului
 
   // Dimensiuni logo
   logoSize: {
@@ -133,7 +134,7 @@ export const ANALYTICS_CONFIG = {
   // Setări Google Analytics (dacă folosești)
   googleAnalytics: {
     measurementId: "G-XXXXXXXXXX", // Înlocuiește cu ID-ul tău
-    enabled: false, // Activează când ai ID-ul
+    enabled: false, // Activează c��nd ai ID-ul
   },
 };
 

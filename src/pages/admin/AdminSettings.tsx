@@ -225,12 +225,25 @@ const AdminSettings = () => {
                             <input
                               type="file"
                               accept="image/*"
-                              onChange={(e) => {
+                              onChange={async (e) => {
                                 const file = e.target.files?.[0];
                                 if (file) {
-                                  // În aplicația reală, aici ai uploada fișierul
+                                  // TODO: ÎNLOCUIEȘTE cu upload real către server
+                                  // const formData = new FormData();
+                                  // formData.append('logo', file);
+                                  // const response = await fetch('/api/upload/logo', {
+                                  //   method: 'POST',
+                                  //   body: formData
+                                  // });
+                                  // const { url } = await response.json();
+                                  // field.onChange(url);
+
+                                  // Simulare temporară - înlocuiește cu upload real
                                   const url = URL.createObjectURL(file);
                                   field.onChange(url);
+
+                                  // Salvează și în localStorage pentru demonstrație
+                                  localStorage.setItem("company_logo", url);
                                 }
                               }}
                               className="text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-red-50 file:text-red-700 hover:file:bg-red-100"

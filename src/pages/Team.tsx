@@ -114,22 +114,6 @@ const Team = () => {
               </div>
             ))}
           </div>
-
-          {/* Bottom section */}
-          <div className="mt-16 text-center">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-red-100 max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-slate-800 mb-4">
-                Alătură-te echipei noastre!
-              </h2>
-              <p className="text-slate-600 mb-6">
-                Suntem mereu în căutarea unor profesioniști pasionați de
-                domeniul imobiliar.
-              </p>
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-xl font-medium transition-all duration-200 shadow-md hover:shadow-lg">
-                Trimite CV-ul tău
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
