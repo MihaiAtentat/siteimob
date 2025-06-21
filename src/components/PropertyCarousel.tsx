@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import VideoPlayer from "./VideoPlayer";
 
-// Mock properties data - same structure as Properties.tsx
+// TODO: ÎNLOCUIEȘTE cu date din baza de date
+// Folosește: const { data: properties = [], isLoading, error } = useProperties();
+// Vezi DATABASE_INSTRUCTIONS.md pentru detalii complete
 const mockProperties = [
   {
     id: "1",

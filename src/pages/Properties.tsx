@@ -7,7 +7,9 @@ import PropertyFilters from "../components/PropertyFilters";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Footer from "../components/Footer";
 
-// Mock data - replace with actual API calls
+// TODO: ÎNLOCUIEȘTE cu date din baza de date
+// Folosește: const { data: properties = [], isLoading, error } = useProperties();
+// Vezi DATABASE_INSTRUCTIONS.md pentru detalii complete
 const mockProperties = [
   {
     id: "1",
