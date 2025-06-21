@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Map } from "lucide-react";
 import { COMPANY_CONFIG, DESIGN_CONFIG } from "@/config/app";
+import LogoDisplay from "./LogoDisplay";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,28 +20,7 @@ const Footer = () => {
             {/* Company Info */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                {COMPANY_CONFIG.logoImage ? (
-                  <img
-                    src={COMPANY_CONFIG.logoImage}
-                    alt={`${COMPANY_CONFIG.name} Logo`}
-                    className="rounded-lg object-contain"
-                    style={{
-                      width: COMPANY_CONFIG.logoSize.width,
-                      height: COMPANY_CONFIG.logoSize.height,
-                    }}
-                  />
-                ) : (
-                  <div
-                    className="flex items-center justify-center text-white text-lg font-medium rounded-lg"
-                    style={{
-                      backgroundColor: DESIGN_CONFIG.colors.primary,
-                      width: COMPANY_CONFIG.logoSize.width,
-                      height: COMPANY_CONFIG.logoSize.height,
-                    }}
-                  >
-                    {COMPANY_CONFIG.logoText}
-                  </div>
-                )}
+                <LogoDisplay size="md" />
                 <div>
                   <h3 className="text-lg font-bold">{COMPANY_CONFIG.name}</h3>
                   <p className="text-sm text-gray-400">

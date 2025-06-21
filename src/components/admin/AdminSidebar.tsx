@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { COMPANY_CONFIG, DESIGN_CONFIG } from "@/config/app";
+import LogoDisplay from "../LogoDisplay";
 
 const AdminSidebar = () => {
   const { logout } = useAdminAuth();
@@ -51,28 +52,7 @@ const AdminSidebar = () => {
       {/* Header */}
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center gap-3">
-          {COMPANY_CONFIG.logoImage ? (
-            <img
-              src={COMPANY_CONFIG.logoImage}
-              alt={`${COMPANY_CONFIG.name} Logo`}
-              className="rounded-lg object-contain"
-              style={{
-                width: COMPANY_CONFIG.logoSize.width,
-                height: COMPANY_CONFIG.logoSize.height,
-              }}
-            />
-          ) : (
-            <div
-              className="flex items-center justify-center text-white text-lg font-medium rounded-lg"
-              style={{
-                backgroundColor: DESIGN_CONFIG.colors.primary,
-                width: COMPANY_CONFIG.logoSize.width,
-                height: COMPANY_CONFIG.logoSize.height,
-              }}
-            >
-              {COMPANY_CONFIG.logoText}
-            </div>
-          )}
+          <LogoDisplay size="md" />
           <div>
             <h1 className="font-bold text-lg text-gray-900">Admin Panel</h1>
             <p className="text-sm text-gray-600">{COMPANY_CONFIG.name}</p>
