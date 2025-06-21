@@ -75,11 +75,26 @@ const Navigation = () => {
           </div>
 
           {/* Phone number - Extended across the page */}
-          <div className="flex items-center ml-12 flex-1">
+          <div className="flex items-center ml-12 flex-1 justify-end">
             {/* Phone number - Desktop */}
-            <div className="hidden lg:flex items-center space-x-2 text-white">
+            <div className="hidden lg:flex items-center space-x-2 text-white mr-4">
               <Phone className="h-4 w-4 text-green-500" />
               <span className="text-sm font-medium">{COMPANY_CONFIG.contact.phone}</span>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-gray-300 hover:text-white p-2 rounded-md transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
             </div>
           </div>
 
