@@ -116,11 +116,21 @@ const AdminSettings = () => {
     setIsLoading(true);
 
     try {
-      // Simulate API call to update settings
+      // TODO: ÎNLOCUIEȘTE cu API call real către backend
+      // const response = await fetch('/api/settings', {
+      //   method: 'PUT',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data)
+      // });
+
+      // Simulare temporară - salvează în localStorage
+      localStorage.setItem("company_logo", data.logoImage || "");
+      localStorage.setItem("company_settings", JSON.stringify(data));
+
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      // In a real app, this would update the config file or database
-      console.log("Settings updated:", data);
+      // Reîmprospătează pagina pentru a actualiza logo-ul
+      window.location.reload();
 
       toast.success("Setările au fost actualizate cu succes!");
     } catch (error) {

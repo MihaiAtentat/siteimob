@@ -19,6 +19,15 @@ const VideoPlayer = ({
   const [showControls, setShowControls] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  // Detectează dacă este embed YouTube sau Vimeo
+  const isEmbed =
+    videoUrl.includes("youtube.com/embed/") ||
+    videoUrl.includes("player.vimeo.com/video/");
+  const isDirectVideo =
+    videoUrl.includes(".mp4") ||
+    videoUrl.includes(".webm") ||
+    videoUrl.includes(".ogg");
+
   const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -40,6 +49,25 @@ const VideoPlayer = ({
   const aspectRatioClass =
     aspectRatio === "mobile" ? "aspect-[9/16]" : "aspect-video";
 
+  // Render embed iframe pentru YouTube/Vimeo
+  if (isEmbed) {
+    return (
+      <div
+        className={`relative bg-black rounded-lg overflow-hidden ${aspectRatioClass} ${className}`}
+      >
+        <iframe
+          src={videoUrl}
+          className="absolute inset-0 w-full h-full"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Property Video"
+        />
+      </div>
+    );
+  }
+
+  // Render video player pentru video-uri directe
   return (
     <div
       className={`relative bg-black rounded-lg overflow-hidden group ${aspectRatioClass} ${className}`}
