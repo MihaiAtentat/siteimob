@@ -1,11 +1,19 @@
 import { MessageCircle } from "lucide-react";
+import { COMPANY_CONFIG, FEATURES_CONFIG } from "@/config/app";
 
 const WhatsAppButton = () => {
+  // Don't render if WhatsApp is disabled
+  if (!FEATURES_CONFIG.enableWhatsApp) {
+    return null;
+  }
+
   const handleWhatsAppClick = () => {
-    // Replace with actual WhatsApp number
-    const phoneNumber = "40768111564"; // Romanian format
-    const message = "Bună ziua! Sunt interesaț de proprietățile dvs.";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    // Remove all non-digits and any leading +
+    const phoneNumber = COMPANY_CONFIG.contact.whatsapp.replace(/[^\d]/g, "");
+    const message = encodeURIComponent(
+      `Bună ziua! Sunt interesat(ă) de proprietățile ${COMPANY_CONFIG.name}. Aș dori să aflu mai multe informații.`,
+    );
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
   };
 

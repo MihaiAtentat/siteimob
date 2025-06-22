@@ -35,13 +35,13 @@ const PropertyCard = ({
   onClick,
 }: PropertyCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 group overflow-hidden w-full h-[600px] flex flex-col">
+    <div className="bg-white rounded-lg shadow-sm property-card-hover luxury-shadow group overflow-hidden w-full h-[500px] flex flex-col property-card border border-gray-200">
       {/* Video Player - Top Section */}
       <div className="relative rounded-t-lg overflow-hidden">
         <VideoPlayer
           videoUrl={videoUrl}
           thumbnailUrl={thumbnailUrl}
-          className="w-full h-[400px] cursor-pointer"
+          className="w-full h-[380px] cursor-pointer"
           aspectRatio="mobile"
         />
 
@@ -61,37 +61,38 @@ const PropertyCard = ({
         )}
       </div>
 
-      {/* Property Information - Simplified Section */}
-      <div className="px-4 py-4 text-slate-800 flex flex-col h-[200px] justify-between text-center">
-        {/* Price - Large at top */}
-        <div className="text-2xl font-bold text-slate-900 mb-4">
+      {/* Property Information - Clean White Design */}
+      <div className="px-3 pt-2 pb-2 bg-white flex flex-col h-[120px] justify-between text-center border-t border-gray-200">
+        {/* Price - Elegant dark font */}
+        <div className="text-lg font-bold text-gray-900 mb-2 font-heading">
           {currency}
           {price.toLocaleString()}
         </div>
 
-        {/* Title/Description - Small */}
+        {/* Title/Description - Clean typography */}
         <h3
-          className="text-sm text-slate-600 overflow-hidden flex-shrink-0 leading-relaxed mb-4"
+          className="text-xs text-gray-600 overflow-hidden flex-shrink-0 leading-tight mb-2 font-primary"
           style={{
             display: "-webkit-box",
             WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
-            maxHeight: "2.5rem",
+            maxHeight: "1.8rem",
+            fontWeight: "500",
           }}
         >
           {title}
         </h3>
 
-        {/* Only Details Button - Centered */}
+        {/* Premium Details Button - Compact Design */}
         <div className="flex justify-center">
           <button
-            className="inline-flex items-center justify-center px-6 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md"
+            className="inline-flex items-center justify-center px-4 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded-md transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 font-primary tracking-wide uppercase border border-red-500/20 min-w-[80px]"
             onClick={(e) => {
               e.stopPropagation();
               onClick?.();
             }}
           >
-            Vezi detalii
+            Vezi Detalii
           </button>
         </div>
       </div>

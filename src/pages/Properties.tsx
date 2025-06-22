@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { SlidersHorizontal, X } from "lucide-react";
 import Navigation from "../components/Navigation";
 import PropertyCard from "../components/PropertyCard";
 import PropertyFilters from "../components/PropertyFilters";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Footer from "../components/Footer";
 
-// Mock data - replace with actual API calls
+// TODO: ÎNLOCUIEȘTE cu date din baza de date
+// Folosește: const { data: properties = [], isLoading, error } = useProperties();
+// Vezi DATABASE_INSTRUCTIONS.md pentru detalii complete
 const mockProperties = [
   {
     id: "1",
@@ -95,6 +98,7 @@ const Properties = () => {
   const navigate = useNavigate();
   const [properties] = useState(mockProperties);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showFilters, setShowFilters] = useState(false);
   const propertiesPerPage = 9; // 3x3 grid
 
   const totalPages = Math.ceil(properties.length / propertiesPerPage);
@@ -127,17 +131,33 @@ const Properties = () => {
       <div className="pt-20 sm:pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Page Header */}
-          <div className="mb-12 sm:mb-16 text-center">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800 mb-4 sm:mb-6">
-              Oferte imobiliare TRÂMBIȚAȘU ESTATE
+          <div className="mb-2 text-left pb-2 border-b border-gray-200">
+            <h1 className="text-3xl lg:text-4xl font-normal text-slate-800 font-heading">
+              Oferte imobiliare Casa Vis
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg">
-              Descoperă cele mai bune proprietăți din portofoliul nostru
-            </p>
-            <div className="w-24 h-1 bg-red-600 mx-auto mt-6"></div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
+          {/* Mobile Filter Toggle Button */}
+          <div className="lg:hidden mb-6">
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold py-4 px-6 rounded-md transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:scale-[1.02] font-primary tracking-wide uppercase border border-red-500/20"
+            >
+              {showFilters ? (
+                <>
+                  <X className="w-5 h-5" />
+                  Ascunde filtrele
+                </>
+              ) : (
+                <>
+                  <SlidersHorizontal className="w-5 h-5" />
+                  Afișează filtrele
+                </>
+              )}
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 border-t border-gray-100 pt-2">
             {/* Main Content - Properties Grid */}
             <div className="lg:col-span-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
@@ -174,7 +194,11 @@ const Properties = () => {
             </div>
 
             {/* Sidebar - Filters */}
-            <div className="lg:col-span-1 order-first lg:order-last">
+            <div
+              className={`lg:col-span-1 order-first lg:order-last lg:border-l lg:border-gray-200 lg:pl-8 ${
+                showFilters ? "block" : "hidden lg:block"
+              }`}
+            >
               <PropertyFilters />
             </div>
           </div>

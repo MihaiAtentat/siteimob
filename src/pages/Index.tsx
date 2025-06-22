@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DESIGN_CONFIG, COMPANY_CONFIG } from "@/config/app";
 import Navigation from "../components/Navigation";
 import PropertySearch from "../components/PropertySearch";
 import PropertyCard from "../components/PropertyCard";
 import WhatsAppButton from "../components/WhatsAppButton";
+import PropertyCarousel from "../components/PropertyCarousel";
 import Footer from "../components/Footer";
 
 // Mock data - same as Properties page
@@ -120,17 +122,16 @@ const Index = () => {
 
         {/* Content */}
         <div className="relative z-10 flex items-center min-h-screen pt-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-32 mb-28">
             <div className="max-w-4xl">
               {/* Main Heading - Left Aligned */}
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-                Agenția Casa Vis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight pl-12">
+                Casa Vis
               </h1>
 
-              {/* Subtitle - Left Aligned */}
-              <p className="text-lg md:text-xl text-white/95 max-w-2xl mb-12 leading-relaxed">
-                Sună-ne, iar noi te ajutăm să iei cea mai bună decizie pentru
-                îndeplinirea obiectivelor TALE.
+              <p className="text-xl sm:text-2xl text-white mb-8 max-w-2xl leading-relaxed">
+                {COMPANY_CONFIG.tagline}. Găsiți proprietatea perfectă sau
+                vindețo la cel mai bun preț.
               </p>
 
               {/* Property Search Component */}
@@ -143,41 +144,11 @@ const Index = () => {
       {/* WhatsApp Button */}
       <WhatsAppButton />
 
-      {/* Featured Properties Section */}
-      <section className="pt-8 pb-16 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-6xl mx-auto">
-            {getFeaturedProperties().map((property) => (
-              <div
-                key={`featured-${property.id}`}
-                className="w-full max-w-sm mx-auto"
-              >
-                <PropertyCard
-                  {...property}
-                  index={0}
-                  onClick={() => navigate(`/proprietate/${property.id}`)}
-                />
-              </div>
-            ))}
-          </div>
+      {/* WhatsApp Button */}
+      <WhatsAppButton />
 
-          {/* Action Buttons - Large */}
-          <div className="flex justify-center gap-6 mt-16 max-w-2xl mx-auto">
-            <button
-              onClick={() => navigate("/echipa")}
-              className="flex-1 bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
-            >
-              Echipa
-            </button>
-            <button
-              onClick={() => navigate("/contact")}
-              className="flex-1 bg-red-600 hover:bg-red-700 text-white px-12 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg hover:shadow-xl"
-            >
-              Contact
-            </button>
-          </div>
-        </div>
-      </section>
+      {/* Property Carousel Section */}
+      <PropertyCarousel />
 
       {/* Footer */}
       <Footer />

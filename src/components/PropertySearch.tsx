@@ -54,8 +54,8 @@ const PropertySearch = () => {
 
           {/* Search Button */}
           <div className="md:col-span-3">
-            <Button className="w-full bg-red-600 hover:bg-red-700 text-white h-12 text-base font-medium rounded-lg transition-colors">
-              Caută proprietăți
+            <Button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white h-12 text-base font-bold rounded-md transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 tracking-wide uppercase border border-red-500/20">
+              Caută Proprietăți
             </Button>
           </div>
         </div>
